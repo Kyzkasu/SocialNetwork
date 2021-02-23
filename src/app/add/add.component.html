@@ -1,1 +1,22 @@
 <p>add works!</p>
+
+<form [formGroup]="profileForm">
+
+    <label>
+      Title:
+      <input type="text" formControlName="title">
+    </label>
+    <label>
+      Last Name:
+      <input type="text" formControlName="link">
+    </label>
+    <label>
+      Description
+      <input type="text" formControlName="description">
+    </label>
+
+  </form>
+
+  <p>
+    <button (click)="createPost()" >Submit</button>
+</p>

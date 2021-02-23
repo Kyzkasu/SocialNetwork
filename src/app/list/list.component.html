@@ -3,5 +3,7 @@
 <!-- Afficher avec une boucle *ngFor une liste de composant Post (PostComponent) -->
 
 <ul>
-    <app-post [post]="item" *ngFor="let item of posts"></app-post>
+    <app-post [VarPost]="item" *ngFor="let item of posts"></app-post>
 </ul>
+
+<app-add (addPostEvent)="addItem($event)" > </app-add>
