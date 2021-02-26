@@ -1,4 +1,9 @@
-
-
-<p>{{VarPost.title}}  </p>
-
+<h1>{{VarPost.title}}</h1>
+<h2>{{VarPost.link}}</h2>
+<p>{{VarPost.description}}</p>
+<p>
+    <button (click)="delete(VarPost)" >Supprimer</button>
+</p>
+<p>
+    <button (click)="edit()">Editer</button>
+</p>

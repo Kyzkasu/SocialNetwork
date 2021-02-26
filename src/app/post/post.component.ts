@@ -1,7 +1,8 @@
-import { Component, Directive, OnDestroy, OnInit } from '@angular/core';
+import { Component, Directive, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Input } from '@angular/core';
 import { Post } from '../@shared/models/post';
+import { PostService } from '../@shared/service/post.service';
 
 
 
@@ -14,11 +15,13 @@ import { Post } from '../@shared/models/post';
 export class PostComponent implements OnInit, OnDestroy {
   bookTitleControl = new FormControl('');
   bookDescriptionControl = new FormControl('');
+  
   @Input() VarPost:Post;
+  
 
   collapsed: boolean;
 
-  constructor() { }
+  constructor(private postService : PostService) { }
 
   ngOnInit(): void {
 
@@ -29,6 +32,18 @@ export class PostComponent implements OnInit, OnDestroy {
   }
 
   toggle() {
+
+  }
+
+  @Output() deleteEvent = new EventEmitter<string>();
+
+  delete(post: Post) {
+      this.deleteEvent.emit(post.id);
+    }
+
+
+  edit()
+  {
 
   }
 
